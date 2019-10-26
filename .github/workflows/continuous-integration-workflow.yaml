@@ -1,4 +1,4 @@
-name: continuous-integration
+name: Continuous Integration
 on: 
   push:
     paths-ignore:
@@ -7,17 +7,20 @@ on:
     paths-ignore:
       - '**.md'     
 jobs:
-  Ubuntu:
-    name: Run Ubuntu
+  run:
+    name: Run CI
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+      node: [ '10.x', '12.x', '13.x' ]
     steps:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Set Node.js 10.x
+    - name: Set Node.js ${{ matrix.node }}
       uses: actions/setup-node@master
       with:
-        node-version: 10.x
+        node-version: ${{ matrix.node }}
 
     - name: npm install
       run: npm install
@@ -26,7 +29,7 @@ jobs:
       run: npm run build
 
     - name: npm test
-      run: npm test
+      run: npm run test-ci
 
     - name: Lint
       run: npm run lint
