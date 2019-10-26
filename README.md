@@ -1,6 +1,6 @@
 # vanilla-js-minimal
 
-https://github.com/briangershon/vanilla-js-minimal/workflows/continuous-integration-workflow/badge.svg
+![continuous integration badge](https://github.com/briangershon/vanilla-js-minimal/workflows/continuous-integration-workflow/badge.svg "Continuous Integration Status")
 
 Vanilla JavaScript starter with minimal dependencies and tools.
 
