@@ -1,5 +1,7 @@
 # vanilla-js-minimal
 
+![Build Status](https://github.com/briangershon/vanilla-js-minimal/workflows/Continuous%20Integration/badge.svg)
+
 Vanilla JavaScript starter with minimal dependencies and tools.
 
 * Includes a development environment with:
@@ -7,6 +9,7 @@ Vanilla JavaScript starter with minimal dependencies and tools.
   * Compile to es5 to run across a wide range of browsers (via Babel)
   * Unit tests (via Jest)
   * Lint (via ESLint with their recommended settings)
+  * Continuous Integration workflow with Github Actions
 
 * Styling with default fonts that look great across operating systems.
 

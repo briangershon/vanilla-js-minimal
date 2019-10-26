@@ -1,0 +1,35 @@
+name: Continuous Integration
+on: 
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'     
+jobs:
+  run:
+    name: Run CI
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '10.x', '12.x', '13.x' ]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Set Node.js ${{ matrix.node }}
+      uses: actions/setup-node@master
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: npm install
+      run: npm install
+
+    - name: Compile
+      run: npm run build
+
+    - name: npm test
+      run: npm run test-ci
+
+    - name: Lint
+      run: npm run lint
