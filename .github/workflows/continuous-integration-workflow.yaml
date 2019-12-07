@@ -25,6 +25,9 @@ jobs:
     - name: node version
       run: node --version
 
+    - name: npm audit
+      run: npm audit
+
     - name: npm install
       run: npm install
 
